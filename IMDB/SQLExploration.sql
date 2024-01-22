@@ -114,7 +114,7 @@ ROUND(AVG(IMDB_Rating) OVER (PARTITION BY Released_Year ORDER BY Released_Year),
 FROM project.imdb
 GROUP BY Series_Title, IMDB_Rating, Released_Year;
 
-#Comparação entre a bilheteria (Gross) de cada e a media de bilheterias no mesmo ano.
+#Comparação entre a bilheteria de cada filme e a media de bilheterias no mesmo ano.
 SELECT Series_Title, Released_Year, Gross,
 ROUND(AVG(Gross) OVER (PARTITION BY Released_Year ORDER BY Released_Year),2) AS Media_Bilheteria_Ano
 FROM project.imdb
